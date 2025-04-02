@@ -1,0 +1,11 @@
+import easygui
+
+easygui.msgbox("p")
+easygui.msgbox("hi welcome to my quiz")
+name = easygui.enterbox("whats ur name")
+easygui.enterbox("hi " + name + ".")
+age = int(easygui.enterbox("how old are you"))
+if age < 13 :
+  easygui.msgbox("sorry too young haha")
+if age > 18 :
+  easygui.msgbox("youre so OLD youre not even allowed to play haha")
