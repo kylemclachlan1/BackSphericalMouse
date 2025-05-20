@@ -1,0 +1,101 @@
+import easygui
+score = 0
+secretword = ["[P]", "[A]", "S", "S", "W", "O", "R", "D"]
+
+easygui.msgbox("everytime you get a question right, you can recieve a letter. There are 8 letters in the final word. Memorise the letters. The letters will be given in SQUARE brackets. Any other letters do not count.")
+easygui.msgbox("hi welcome to my common knowledge quiz")
+while True :
+  user_hi = easygui.enterbox("say hi back")
+  if user_hi == ("hi"):
+    easygui.msgbox("thanks. " + secretword[0])
+    #HELP ME
+    break
+name = easygui.enterbox("whats your name")
+if name == "kp" or "kieran" or "Kieran" or "k":
+  easygui.msgbox("wow! hi sir! 1 million points!! (D)")
+  score += 1000000
+if name != "kp" or "kieran" or "Kieran" or "k":
+    easygui.enterbox("Hi " + name + ". Welcome to my quiz.")
+age = int(easygui.enterbox("how old are you"))
+if age < 15 :
+  easygui.msgbox("sorry too young haha")
+  exit()
+easygui.msgbox("question 1")
+one = easygui.buttonbox("What is 7 + 7", choices=["2", "Not 2", "14"])
+if one == "Not 2":
+  score =+ 1
+  easygui.msgbox("congrats you got it. [A] it was pretty easy though so lets move on")
+if one == "14":
+  score =+ 1
+  easygui.msgbox("congrats you got it. [A] it was pretty easy though so lets move on")
+if one == "2":
+  score =- 1
+  easygui.msgbox("incorrect. you will not receive a letter. this means you will need to guess at the end.")
+easygui.msgbox("question 2")
+two = easygui.enterbox("what is the capital of Burkina Faso")
+if two == "Ouagadougou" and "ouagadougou":
+  easygui.msgbox("you got that. cool bro. [S]")
+  score =+ 1
+if two != "Ouagadougou" and "ouagadougou":
+  easygui.msgbox("sorry.. that was hard.. I won't deduct any points for that. Have a free letter [S]")
+easygui.msgbox("question 3")
+three = easygui.buttonbox("who first climbed mount everest", choices=["ethan", "edmond hillary", "John lennon"])
+if three == "edmond hillary":
+  score =+ 1
+  easygui.msgbox("cool you got it [S]")  
+if three != "edmond hillary":
+  score =- 1
+  easygui.msgbox("Nope wrong. you will not a recieve a letter this round. you will need to guess this letter")
+easygui.msgbox("Moving on.")
+letters = easygui.buttonbox("[W]", choices=["i have been memorising the letters", "i've completely forgotten"])
+if letters == "i've completely forgotten":
+  wow = easygui.buttonbox("You should have been listening", choices=["I'm sorry"])
+  if wow == "I'm sorry":
+    easygui.msgbox("ok well you're going to have to restart now. you need these letters for final question")
+    exit()
+if letters == "i have been memorising the letters":
+  easygui.msgbox("question 4")
+four = easygui.choicebox("Who is the current president of the united states", choices=["Joe Biden", "Donald Trump", "Kamala Harris"])
+if four == "Donald Trump":
+  yes = easygui.buttonbox("correct. {H}. would you like to keep going?", choices=["Yes", "No"])
+  if yes == "No":
+    easygui.msgbox("k bye")
+    exit()
+  if yes == "Yes":
+    easygui.msgbox("Okay, continuing now [O]")
+    score =+1
+if four != "Donald Trump":
+  easygui.msgbox("incorrect. you will not a recieve a letter this round. you will need to guess this letter")
+easygui.msgbox("question 5")
+easygui.msgbox("What was the year 25 years ago..")
+easygui.msgbox("add 12..")
+easygui.msgbox("times it by 3..")
+year = easygui.enterbox("and then divide it by 2?")
+if year != "3018":
+  easygui.msgbox("Incorrect, the answer was 3018. you will not a recieve a letter this round. you will need to guess this letter")
+  score =-1
+if year == "3018":
+  easygui.msgbox("correct! [R]")
+  score =+1
+easygui.msgbox("Question 6")
+six = easygui.enterbox("what is the term for a group of flamingos?")
+if six == "flamboyance" and "Flamboyance" and "A flamboyance" and "a flamboyance":
+  easygui.msgbox("correct! [D]")
+  score =+ 1
+  easygui.msgbox("r")
+if six != "flamboyance" and "Flamboyance" and "A flamboyance" and "a flamboyance":
+  score =- 1
+  easygui.msgbox("sorry, thats wrong. Because you got the question wrong, you will not get a letter.")
+easygui.msgbox("Final question.")
+easygui.msgbox("I told you to memorize the letters in the SQUARE BRACKETS.")
+easygui.msgbox("Getting a question wrong may have affected your result.")
+passw = easygui.passwordbox("What were those letters in order?")
+if passw == "PASSWORD":
+  easygui.msgbox("Congratulations! You won!")
+if passw == "password":
+  pls = easygui.buttonbox("Correct, unfortunately they were supposed to be capital letters.", choices = ["Pls let me have this", "Fine I'll restart"])
+  if pls == "Pls let me have this":
+    easygui.msgbox("your score is " + str(score))
+if age > 18 :
+  easygui.msgbox("Sorry too old haha")
+  quit()
